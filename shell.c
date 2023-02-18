@@ -9,21 +9,13 @@
 
 char *_which(char* argv)
 {
-	char *ptr = malloc(BUFSIZE);
 	char path[BUFSIZE];
 	struct stat st;
-	if (ptr == NULL)
-	{
-		perror("malloc");
-		free(ptr);
-		exit(EXIT_FAILURE);
-	}
 	snprintf(path, BUFSIZE, "%s", argv);
 	if (stat(path, &st) == 0)
 	{
 		printf(" this is the %s\n", path);
-		strcpy(ptr, path);
-		return (ptr);
+		return (strdup(path));
 	}
 	else
 	{
@@ -33,19 +25,19 @@ char *_which(char* argv)
 			char* dir = strtok(p, ":");
 			while (dir != NULL)
 			{
+				memset(path, 0, sizeof(path));
 				snprintf(path, BUFSIZE, "%s/%s", dir, argv);
 				if (stat(path, &st) == 0)
 				{
 					printf("this is path %s\n", path);
-					strcpy(ptr, path);
-					return (ptr);
-					break;
+			
+					return (strdup(path));
 				}
 				dir = strtok(NULL, ":");
 			}
+			p = NULL;
 		}
 	}
-	free(ptr);
 	return (NULL);
 }
 int display()
@@ -68,6 +60,7 @@ int main(void)
 	char *argv[i + 1];
 	const char delim[] = " ";
 	char *token;
+	char *token1;
 	pid_t pid;
 	char *value;
 
@@ -76,6 +69,9 @@ int main(void)
 	{
 		char *line = NULL;
 		size_t len = 0;
+		i = 1;
+		argv[0] = NULL;
+		setenv("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games", 1);
 		printf("$ ");
 		if ((nread = getline(&line, &len, stdin)) == -1)
 		{
@@ -98,7 +94,7 @@ int main(void)
 			continue;
 		}
 		
-		token = strtok(line, delim);
+		token1 = strtok(line, delim);
 		if (token != NULL)
 		{
 			printf("token");
@@ -106,7 +102,27 @@ int main(void)
 //			free(argv);
 		}
 		printf("this is the seg\n");
-		value = _which(token);
+//		value = _which(token);
+//		if (value == NULL)
+//		{
+//			free(line);
+//			free(value);
+//			printf("empty value\n");
+//			exit(99);
+//		}
+//		printf("this is the value - %s\n", value);
+//		argv[0] = value;
+//		free(value);
+		token = NULL;
+		token = strtok(NULL, delim);
+		while (token != NULL)
+		{
+			argv[i] = token;
+			printf("This is token %s" 		"%d\n", argv[i], i);
+			token = strtok(NULL, delim);
+			i++;
+		}
+		value = _which(token1);
 		if (value == NULL)
 		{
 			free(line);
@@ -117,14 +133,7 @@ int main(void)
 		printf("this is the value - %s\n", value);
 		argv[0] = value;
 //		free(value);
-		token = strtok(NULL, delim);
-//		while (token != NULL)
-//		{
-//			argv[i] = token;
-//			printf("This is token %s" 		"%d\n", argv[i], i);
-//			token = strtok(NULL, delim);
-//			i++;
-//		}
+		
 		argv[i] = NULL;
 		for (j = 0; argv[j] != NULL; j++)
 			printf("This is the number %d array element -- %s", j, argv[j]);
@@ -152,6 +161,7 @@ int main(void)
 			free(line);
 			line = NULL;
 			len = 0;
+			value = NULL;
 
 		}
 		else
@@ -162,6 +172,7 @@ int main(void)
 			free(line);
 			line = NULL;
 			len = 0;
+			value = NULL;
 		}
 	
 	
