@@ -1,20 +1,20 @@
 ![Logo](https://pbs.twimg.com/media/C93xIaaUwAAAM99?format=jpg&name=small)
 
- # ze_sh - a simple shell
+ # hsh - A simple shell
 
-##### ZE_SH  Shell is a simple command line shell for OS X and Linux. ze_sh  includes most basic features present in the bash shell. This shell was built as a project for Holberton School.
+##### hsh  Shell is a simple command line shell for OS X and Linux. hsh  includes most basic features present in the bash shell. This shell was built as a project for ALX.
 
 #### Quick Start and Installation
 
 ------
 
-ZE_SH  works like any other shell, like bash or zsh.
+hsh  works like any other shell, like bash or zsh.
 
-ZE_SH  builds successfully with a GCC 4.8.8 compiler or later. ZE_SH  can compile using `gcc 4.8.4 -Wall -Werror -Wextra -pedantic *.c -o ZE_SH _shell`.
+hsh  builds successfully with a GCC 4.8.8 compiler or later. hsh  can compile using `gcc 4.8.4 -Wall -Werror -Wextra -pedantic *.c -o hsh`.
 
-To start up ZE_SH  Shell, simply type
+To start up hsh  Shell, simply type
 ```
-./ze_sh
+./hsh
 ```
 in the terminal.
 
@@ -22,13 +22,13 @@ in the terminal.
 
 ------
 
-Like other shells, ze_sh  is used by given it commands. Every ze_sh  command follows the same general syntax: `command name {arguments}`. The command is executed by writing the name of the command followed by any arguments.
+Like other shells, hsh  is used by given it commands. Every hsh  command follows the same general syntax: `command name {arguments}`. The command is executed by writing the name of the command followed by any arguments.
 
 ```
-echo Hello ze_sh 
+echo Hello hsh 
 ```
 
-Above will run the `echo` command, which will write its arguments `Hello ze_sh ` to  the standard output.
+Above will run the `echo` command, which will write its arguments `Hello hsh ` to  the standard output.
 
 For more information on echo, you can use the `man` command. The `man` command displays a manual page of a given command, system call, libraries, and important files.
 
@@ -43,7 +43,7 @@ The hsh shell also provides various builtins, commands built into the hsh shell 
 
 ------
 
-Any program in your computer can be used as a command in ze_sh  by typing the filename, provided the program is located in any of the directories in the [PATH - link include]. Otherwise, a full path to the program is required.
+Any program in your computer can be used as a command in hsh  by typing the filename, provided the program is located in any of the directories in the [PATH - link include]. Otherwise, a full path to the program is required.
 
 ```
 /Desktop/Holberton/_echo Hello Holberton
@@ -58,7 +58,7 @@ echo Hello Holberton
 ```
 ##### Switches & Flags
 
-Switches and flags arguments of commands are also supported by ze_sh . Most switches start with a hypen, `-`  For example, when a user inputs:
+Switches and flags arguments of commands are also supported by hsh . Most switches start with a hypen, `-`  For example, when a user inputs:
 
 ```
 ls -l
@@ -86,7 +86,7 @@ The `ls` commands lists all directories and files in the current working directo
 
 ------
 
-There are several builtins programmed into the ze_sh . Below is a description and use for each builtin.
+There are several builtins programmed into the hsh . Below is a description and use for each builtin.
 
 ##### env
 
@@ -102,10 +102,10 @@ To exit out of the shell, the user may use the `exit` builtin.
 exit
 ```
 
-#### Exiting commands and ze_sh 
+#### Exiting commands and hsh 
 
 ------
 
 To exit out of a process or command, `ctrl c` is used. Control-C interrupts a process and causes it to abort.
 
-To exit out of the ze_sh  shell, the user can do one of the following, `ctrl D` or `exit `. When exiting with `ctrl D`, an exit status of 0 is given.
+To exit out of the hsh  shell, the user can do one of the following, `ctrl D` or `exit `. When exiting with `ctrl D`, an exit status of 0 is given.
