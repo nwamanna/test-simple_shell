@@ -1,4 +1,4 @@
-![Logo](https://pbs.twimg.com/media/C93xIaaUwAAAM99?format=jpg&name=medium)
+![Logo](https://pbs.twimg.com/media/C93xIaaUwAAAM99?format=jpg&name=small)
 
  # ZE Shell - a simple shell
 
