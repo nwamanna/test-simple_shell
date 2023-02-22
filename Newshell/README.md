@@ -46,7 +46,7 @@ The hsh shell also provides various builtins, commands built into the hsh shell 
 Any program in your computer can be used as a command in hsh  by typing the filename, provided the program is located in any of the directories in the [PATH - link include]. Otherwise, a full path to the program is required.
 
 ```
-/Desktop/Holberton/_echo Hello Holberton
+/Desktop/ALX/_echo Hello ALX
 ```
 
 ##### Command Seperation
@@ -54,7 +54,7 @@ Any program in your computer can be used as a command in hsh  by typing the file
 Commands and any arguments are seperated by a ` ' '` . Commands are read and executed from left to right and end with a newline (i.e Return Key).
 
 ```
-echo Hello Holberton
+echo Hello ALX
 ```
 ##### Switches & Flags
 
