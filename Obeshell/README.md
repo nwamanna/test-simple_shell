@@ -10,7 +10,7 @@
 
 hsh  works like any other shell, like bash or zsh.
 
-hsh  builds successfully with a GCC 4.8.8 compiler or later. hsh  can compile using `gcc 4.8.4 -Wall -Werror -Wextra -pedantic *.c -o hsh`.
+hsh  builds successfully with a GCC 4.8.8 compiler or later. hsh  can compile using `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 To start up hsh  Shell, simply type
 ```
